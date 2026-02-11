@@ -11,14 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Medals data:', data);
-        console.log(data.medalStandings.medalsTable)
 
         data.medalStandings.medalsTable.forEach(country => {
             const countryItem = document.createElement('div');
             countryItem.classList.add('item');
             const totalMedals = country.medalsNumber.find(o => o.type === 'Total');
-            console.log(totalMedals)
             countryItem.innerHTML = `
                 <span class="rank">${country.rank}</span>
                 <span class="country">
