@@ -33,6 +33,12 @@ header{
     }
 }
 
+@media screen and (max-width: 768px) {
+    header .logo{
+        height: 60px;
+    }
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
