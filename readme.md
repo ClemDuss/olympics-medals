@@ -75,8 +75,9 @@ This approach gives you full control over styling, logic, and integration.
 
 Official medal standings are retrieved from the following endpoint:
 
+```
 https://www.olympics.com/wmr-owg2026/competition/api/FRA/medals
-
+```
 
 This API provides up-to-date medal ranking data.
 
