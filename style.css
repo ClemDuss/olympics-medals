@@ -36,12 +36,6 @@ header{
     }
 }
 
-@media screen and (max-width: 768px) {
-    header .logo{
-        height: 60px;
-    }
-}
-
 .view{
     display: none !important;
 
@@ -91,7 +85,6 @@ header{
     .medals-list {
         flex: 1;
         overflow-y: scroll;
-        padding-bottom: 60px;
 
         .item {
             display: grid;
@@ -137,7 +130,6 @@ header{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding-bottom: 60px;
 
     .day-header{
         color: var(--color-blue-mico);
@@ -214,7 +206,9 @@ header{
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(4px);
-    mask: linear-gradient(to top, white 40px, transparent 100%)
+    mask: linear-gradient(to top, white 40px, transparent 100%);
+    z-index: 1;
+    display: none;
 }
 
 .view-switcher{
@@ -223,13 +217,12 @@ header{
     padding: 3px;
     width: fit-content;
     position: relative;
-    height: 40px;
+    height: 30px;
     display: flex;
     margin-inline: auto;
-    position: fixed;
-    bottom: 10px;
-    left: calc(50% - (300px + 6px) / 2);
+    margin-top: 20px;
     box-shadow: 0px 0 4px 0 hsl(0deg 0% 0% / 20%), 0 4px 4px 0 hsl(0deg 0% 0% / 20%);
+    z-index: 2;
 
     input[type=radio]{
         display: none;
@@ -246,7 +239,7 @@ header{
         max-width: 150px;
         text-align: center;
         z-index: 2;
-        height: 40px;
+        height: 30px;
         cursor: pointer;
         transition: all 0.3s ease;
 
@@ -326,3 +319,30 @@ body:has(input#goto-medals[type=radio]:checked){
     }
 }
 
+
+
+@media screen and (max-width: 768px) {
+    header .logo{
+        height: 60px;
+    }
+
+    .view-switcher{
+        position: fixed;
+        bottom: 10px;
+        left: calc(50% - (300px + 6px) / 2);
+        height: 40px;
+        margin-block: 0;
+
+        label{
+            height: 40px;
+        }
+    }
+
+    .switcher-blur{
+        display: block;
+    }
+
+    .medals-details, .medals-list{
+        padding-bottom: 60px;
+    }
+}
